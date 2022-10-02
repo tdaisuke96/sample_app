@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   post '/login',    to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
   resources :users
+  resources :account_activations, only: [:edit]
+
 #下記は周りくどいため使用しない  
 =begin
   get 'static_pages/home'
